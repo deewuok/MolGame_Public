@@ -37,9 +37,8 @@ const renderItems = (data) =>{
   data.forEach(item=>{
     var node = document.createElement("li");    
     node.draggable = true
-    node.style.backgroundColor = item
-    node.style.backgroundColor = node.style.backgroundColor.length > 0  
-    ? item : 'lightblue'
+    colors = ['lightblue', 'yellow','purple','orange','green','red'].sort(() => Math.random() - 0.5)
+    node.style.backgroundColor = colors[0]
     node.addEventListener('drag', setDragging) 
     node.addEventListener('dragover', setDraggedOver)
     node.addEventListener('drop', compare) 
@@ -71,6 +70,6 @@ const setDragging = (e) =>{
 }
 
 // genRandom([0, 1, 2, 3, 4, 5, 6])
-genRandom(['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'])
+genRandom(['DNA Helicase binds to initiator proteins', 'Helicase loads onto DNA', 'Helicase denatures helix and binds with DNA primase to form primosome', 'Primase synthesizes RNA primer which is extended as DNA chain by DNA polymerase', 'Initiator proteins bind to replication origin initiator'])
 </script>
 </body>
